@@ -58,7 +58,7 @@
       <input type="text" name="depart" class="recherche">
       <p class="recherche">Arrivée</p>
       <input type="text" name="arrivee" class="recherche">
-      <input type="button" name="search" class="recherche" value="Rechercher">
+      <input type="button" class="recherche" value="Rechercher" onclick="self.location.href='resultat.php'">
       <br/>
     </div>
     <br/>

@@ -52,7 +52,9 @@ div.recherche {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
   box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-}
+  margin-bottom:100px;
+  margin-top:100px;
+}	
 
 p.connexion {
   font-weight:bold;
@@ -154,11 +156,12 @@ input.modification{
   margin-bottom: 10px;
 }
 table {
-	border:3px solid #6495ed;
+	border:2px solid #6495ed;
 	border-collapse:collapse;
 	width:90%;
 	margin:auto;
-	margin-bottom:100px;
+	margin-bottom:10px;
+  	margin-top:10px;
 }
 thead{
 	background-color:#D0E3FA;
@@ -185,4 +188,11 @@ td {
 	padding:5px;
 	text-align:center;
 }
-	
+
+input.select{
+  display: block;
+  margin: auto;
+  margin-bottom: 30px
+}
+
+
