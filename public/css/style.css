@@ -363,6 +363,7 @@ p + p {
 #select_train #valid_train{
   float: right;
   margin-right: 5%;
+  margin-top: 100px;
 }
 
 #select_train #reset_train{
