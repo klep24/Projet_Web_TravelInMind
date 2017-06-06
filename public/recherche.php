@@ -4,6 +4,7 @@
 <title>Recherche</title>
 <?php include('static/header.php'); ?>
 
+
 </head>
 <body>
   <?php include('static/navbar.php'); ?>
@@ -79,43 +80,54 @@
 
 	  <script id="source" language="javascript" type="text/javascript">
 
-                  $(document).ready(function ()
+                  $(document).ready(function () 
           {
              $('#result').empty();
             //-----------------------------------------------------------------------
             // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
             //-----------------------------------------------------------------------
-            $.ajax({
-              url: 'api.php',                  //the script to call to get data
+            $.ajax({                                      
+              url: 'api.php',                  //the script to call to get data          
               data: "",                        //you can insert url argumnets here to pass to api.php
                                                //for example "id=5&parent=6"
-              dataType: 'json',                //data format
+              dataType: 'json',                //data format      
               success: function(rows)          //on recieve of reply
               {
-
-
+      
+            
                for (var i in rows)
                {
 
-                 var row = rows[i];
+                 var row = rows[i];          
 
-				 var ID=row["ID"];
+         var ID=row["ID"];
                  var D=row["Depart"];
                  var A=row["Arrive"];
                  var H=row["Heure"];
                  var Duree=row["Duree"];
                  var Chg=row["Changement"];
-
-                 var buttom='<input type="button" name="select" class="select" value="Selectionner ce train">';
+                 
+                 var buttom='<input type="button" name="select" class="select" value="Selectionner">';
                  var thead='<thead><tr><th>ID</th><th>Départ</th><th>Arrivé</th><th>Changement</th><th>Heure</th><th>Durée</th></tr></thead>';
 
-                 $('#result').append("<table>"+thead+"<tbody><tr><td>"+ID+"</td><td>"+D+"</td><td>"+A+"</td><td>"+Chg+"</td><td>"+H+"</td><td>"+Duree+"</td></tr></tbody></table>"+buttom)
+                 var collapse_head = '<div class="panel-group" id="accordion"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse'
+        var id_collapse_head=i+'">'
+                 var fin_collapse_head='</a></h4></div>'
+                
+                var collapse_body = '<div id="collapse'+i+'" class="panel-collapse collapse in"><div class="panel-body">'
+                var fin_collapse_body =' </div></div></div></div>'
+                
+          
+                 //$('#result').append("
+                 var tableau= "<table>"+thead+"<tbody><tr><td>"+ID+"</td><td>"+D+"</td><td>"+A+"</td><td>"+Chg+"</td><td>"+H+"</td><td>"+Duree+"</td></tr></tbody></table>"
+                 
+                 $('#result').append(collapse_head+id_collapse_head+tableau+fin_collapse_head+collapse_body+"je suis une description de trajet"+buttom+fin_collapse_body)
                           .append("");
-               }
-             }
+               } 
+             } 
             });
-          });
-			</script>
+          }); 
+      </script>
 
 
     </div>
