@@ -10,7 +10,7 @@
   <?php include('static/navbar.php'); ?>
 <div class="recherche">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
 		<!-- <div class="recherche">
 		  <p class="recherche">Départ</p>
 		  <input type="text" name="depart" class="recherche">
@@ -72,7 +72,7 @@
 
 
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
       <h3>Resultats</h3>
 	  <br>
 
