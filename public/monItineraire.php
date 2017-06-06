@@ -9,7 +9,7 @@
     <?php include('static/navbar.php'); ?>
 
     <div>
-      <h1>Mes itinéraires</h1>
+      <h1>Mon itinéraire</h1>
 
 	<table class="itineraire">
 		<thead class="itineraire">
