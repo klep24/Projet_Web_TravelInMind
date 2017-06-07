@@ -4,7 +4,7 @@ img {
 }
 
 .navbar-fixed-bottom, .navbar-fixed-top {
-	position:absolute;
+  position:absolute;
   top: inherit;
 }
 
@@ -149,11 +149,26 @@ input.compte{
   display:block;
 }
 
+#select_trainLeft{
+  margin-bottom:100px;
+  margin-top:100px;
+  margin-left:25px;
+  margin-right:50px;
+}
+#tableLeft{
+  
+  	border:3px solid #ccc;
+	border-collapse:collapse;
+	width:41.6%;
+  	margin:auto;
+  	border-right:6px dotted black ; 
+
 table {
 	border:3px solid #ccc;
 	border-collapse:collapse;
 	width:90%;
 	margin:auto;
+  
 }
 thead{
 	background-color:#D0E3FA;
