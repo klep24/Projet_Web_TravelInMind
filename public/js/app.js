@@ -26,7 +26,7 @@ $(window).on('load', function(){
     limit: 3
   });
 
-  $(document).ready(function() {
+
     $("select.typeahead").val("");
     $( function() {
       $( "#jour_dep" ).datepicker({
@@ -42,11 +42,24 @@ $(window).on('load', function(){
         dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
         weekHeader: 'Sem.',
         dateFormat: 'dd/mm/yy'
+      }).datepicker("setDate", '+0');
+    });
+
+
+  $(function(){
+    $('input[type="time"][value="now"]').each(function(){
+      var d = new Date(),
+      h = d.getHours(),
+      m = d.getMinutes();
+      if(h < 10) h = '0' + h;
+      if(m < 10) m = '0' + m;
+      $(this).attr({
+        'value': h + ':' + m
       });
     });
   });
 
-$(document).ready(function() {
+
   jQuery.validator.setDefaults({
     debug: true,
     success: "valid"
@@ -101,7 +114,7 @@ $(document).ready(function() {
      }
    }
   });
-});
+
 
   // Initialize the Bloodhound suggestion engine
   gares.initialize();
@@ -169,28 +182,23 @@ $(document).ready(function() {
 
   $("#valid_train").on("click", function() {
     if (gare_dep && gare_arr) {
-      $.ajax({
-         url: "https://api.sncf.com/v1/coverage/sncf/journeys?from="+gare_dep.id+"&to="+gare_arr.id+"&datetime="+ JSObjtostrDateTime( new Date() ) + "&count=3",
-         type: "GET",
-         beforeSend: function(xhr){
-           xhr.setRequestHeader('Authorization', 'f6ca878c-116d-461d-a5cf-33d41adf5854');
-         },
-         success: function(result,status,xhr) {
-           var i=0;
-           var journeys = [];
-           result.journeys.forEach( function(journey){
-             journeys.push( new JourneyLocal( journey ) );
-           });
-           console.log( JSON.stringify( journeys ) );
-           console.log("Context done.");
-           var source = $("#result_train_template").html();
-           var template = Handlebars.compile(source);
-           var context = journeysToContext( journeys );
-           var html_compiled = template(context);
-           $("#result_train table").append( html_compiled );
-         }
-      });
+      var date = $( "#jour_dep" ).datepicker("getDate");
+      year = String(date.getFullYear());
+      month = String(date.getMonth() + 1);
+      day = String(date.getDate());
+      var time = $("#heure_dep").val();
+      hours = time.substring(0,2);
+      minute = time.substring (3,6);
+      seconde = "00";
+      if (month < 10) {
+        month = "0"+month;
+      }
+      if (day < 10) {
+        day = "0"+day;
+      }
+      var time_start = year+month+day+"T"+hours+minute+seconde;
     }
+      document.location.href=("recherche.php?station_start="+gare_dep.id+"&station_stop="+gare_arr.id+"&datetime="+ time_start);
   });
 
   $("#reset_train").on("click", function() {

@@ -4,7 +4,8 @@ body{
   background-image: url("../img/rail.jpg");
   max-width: 100%;
   height: auto;
-}
+  background-repeat: round;
+
 
 .corps{
   margin-left: 15%;
@@ -21,25 +22,24 @@ img {
 .navbar-fixed-bottom, .navbar-fixed-top {
   position:absolute;
   top: inherit;
-  margin-left: 200px;
-  margin-right: 200px;
-}
+  margin-left: 15%;
+  margin-right: 15%;
+
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     background-color: #f8f8f8;
     background: #f8f8f8;
-    
 }
 
 h1 {
-  	margin-left:200px;
+  	margin-left:5%;
 }
 
 #intro {
-  margin-left:220px;
-  margin-right: 200px;
+  margin-left:10%;
+  margin-right: 10%;
   margin-top: 30px;
   text-align: justify;
   margin-bottom: 50px;
@@ -209,12 +209,33 @@ th.ligneEntete{
 
 
 /*
+=======
+}
+
+.btn-success, .btn-warning{
+  background-color: #0d9353;
+  background-image: none;
+  border-color: #0d9353;
+}
+
+.btn-success:hover, .btn-warning:hover{
+  background-color: #0B6138;
+  border-color: #0B6138;
+}
+
+
+#h1{
+  color: #0B6138;
+}
+
+
+/*---------------FIN div Resumé de recherche page recherche.php--------------*/
 table {
 	border:3px solid #ccc;
 	border-collapse:collapse;
 	width:90%;
 	margin:auto;
-  
+  margin-bottom: 100px;
 }
 thead{
 	background-color:#D0E3FA;
@@ -252,6 +273,8 @@ html {
   max-width: 750px;
   margin: 0 auto;
   text-align: center;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .tt-menu,
@@ -318,7 +341,7 @@ p + p {
 .typeahead,
 .tt-query,
 .tt-hint {
-  width: 400px;
+  width: 100%;
   height: 45px;
   padding: 8px 12px;
   font-size: 20px;
@@ -392,6 +415,13 @@ p + p {
 
 /* example specific styles */
 /* ----------------------- */
+.table {
+  max-width: 75%;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  border-top: none;
+}
 
 #custom-templates .empty-message {
   padding: 5px 10px;
@@ -423,13 +453,12 @@ p + p {
 
 #select_train #valid_train{
   float: right;
-  margin-right: 5%;
-  margin-top: 100px;
+  margin-right: 15%;
 }
 
 #select_train #reset_train{
   float: left;
-  margin-left: 5%;
+  margin-left: 15%;
 }
 
 #select_train {
@@ -438,4 +467,3 @@ p + p {
   display:block;
   margin-bottom: 100px;
 }
-
