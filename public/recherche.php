@@ -21,9 +21,12 @@
         <label>Arrivée: </label><br>
         <label>Date et heure de circulation: </label><br>
 
-        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-success" onclick="document.location.href='index.php';">Modifier la recherche</button>
       </div>
 <!-----------------------FIN-RESUME---------------------->
+
+<hr>
+
 
 <!-----------------------DEBUT-RESULT---------------------->
       <div class="RechercheResult">

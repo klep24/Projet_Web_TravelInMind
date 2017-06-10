@@ -180,43 +180,6 @@ input.compte{
 }
 
 
-.btn-success{
-background-image: linear-gradient(to bottom,#0B6138 0,#0B6138 100%);
-
-}
-
-#h1{
-  color: #0B6138;
-}
-
-
-/*---------------FIN div Resumé de recherche page recherche.php--------------*/
-
-/*---------------DEBUT div RechercheResult page recherche.php--------------*/
-
-table.journey{
-  border:1px solid silver;
-}
-
-ul.Liste_horaires,ul.Liste_trajet{
-  list-style-type: none; 
-}
-
-tr.entete{
-  background-color:#0B6138;
-}
-
-th.ligneEntete{
-  text-align: center;
-}
-/*---------------FIN div RechercheResult page recherche.php--------------*/
-
-
-
-/*
-=======
-}
-
 .btn-success, .btn-warning{
   background-color: #0d9353;
   background-image: none;
@@ -230,29 +193,96 @@ th.ligneEntete{
 
 
 #h1{
-  color: #0B6138;
+  color: #0d9353;
+}
+
+/*---------------FIN div Resumé de recherche page recherche.php--------------*/
+
+/*---------------DEBUT div RechercheResult page recherche.php--------------*/
+
+table.journey{
+
+  border:1px solid silver;
+  padding-bottom: 10%;
+  padding-top: 10%;
 }
 
 
-/*---------------FIN div Resumé de recherche page recherche.php--------------*/
+tr.entete{
+  background-color:darkgrey;
+  color: black;
+  border: none;
+  font-size: small;
+}
+
+tr.entete:hover{
+  background-color:#0d9353;
+  color: white;
+}
+
+tr.colonnes{
+  background-color: white;
+  border: none;
+  font-size: medium;
+  text-align: center;
+}
+
+th{
+  text-align: center;
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+
+tbody.section{
+   border: none;
+   text-align: center;
+   
+ }
+
+ thead{
+  border: none;
+ }
+
+td.horaires, td.trajet, td.section_num_type_train, td.infos{
+
+   color:#000000;
+   letter-spacing:1pt;
+   word-spacing:2pt;
+   font-size:111%;
+   text-align:center;
+   font-family:trebuchet MS, sans-serif;
+   line-height:2;
+}
+
+td{
+
+  padding-bottom:1%;
+}
+
+th.plus{
+  
+}
+/*---------------FIN div RechercheResult page recherche.php--------------*/
+
 
 table {
 	border:3px solid #ccc;
 	border-collapse:collapse;
-	width:90%;
+	width:75%;
 	margin:auto;
   margin-bottom: 100px;
+
 }
 thead{
 	background-color:#D0E3FA;
-	border:1px solid #6495ed;
 
 }
 tbody {
 	background-color:#FFFFFF;
-	border:1px solid #6495ed;
+  
 
-}*/
+}
+
 th.itineraire {
 	font-family:monospace;
 	border:1px dotted #6495ed;

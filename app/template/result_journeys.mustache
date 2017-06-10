@@ -5,10 +5,14 @@
 
      <thead class="recherchethead"> <!-- En-tête du tableau -->
          <tr class="entete">
-             <th class="ligneEntete">Durée</th>
-             <th class="ligneEntete">Correspondance</th>
+             <th class="ligneEntete">Durée: {{duration}}</th>
+             <th class="ligneEntete"> 1 correspondance</th>
              <th class="ligneEntete"></th>
-             <th class="ligneEntete"></th>
+             <th class="plus">
+                 <a href="#">
+                 <span class="glyphicon glyphicon-plus-sign"></span>
+                 </a>
+            </th>
          </tr>
 
          <tr class="colonnes">
@@ -20,28 +24,52 @@
 
      </thead>
 
-     <tbody class="section"> <!-- Corps du tableau -->
+     <tbody class="sections"> <!-- Corps du tableau -->
          {{# sections}}
          <tr class="section">
           
              <td class="horaires">
-                <ul class="Liste_horaires">
-                  <li class="section_timesD">{{time_start}}</li>
-                  <li class="section_timesA">{{time_stop}}</li>
-                </ul>
+                
+                  <label>{{time_start}}</label><br>
+                  <label>{{time_stop}}<label>
+                
              </td>
 
 
              <td class="trajet">
-                <ul class="Liste_trajet">
-                  <li class="section_stationD">{{station_start}}</li>
-                  <li class="section_stationA">{{station_stop}}</li>
-                </ul>
+                
+                  <label class="D">{{station_start}}</label><br>
+                  <label>{{station_stop}}<label>
+                
               </td>
 
-             <td class="section_num_type_train">{{type_train}}<br>n°{{num_train}}</td>
+             <td class="section_num_type_train"><img src="img/icon.jpg"><br>{{type_train}}<br>n°{{num_train}}</td>
              <td class="infos">Départ à l'heure</td>
          </tr>
+
+         <tr class="lignes">
+          
+             <td>
+                <hr>
+             </td>
+
+             <td>
+                <hr>
+             </td>
+
+             <td>
+                <hr>
+             </td>
+
+             <td>
+                <hr>
+             </td>
+
+         </tr>
+
+
+
+
          {{/sections}}
      </tbody>
   </table>
