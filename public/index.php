@@ -1,6 +1,6 @@
-<?php
-  require_once __DIR__.'/../app/init.php';
- ?>
+<!--<?php
+  //require_once __DIR__.'/../app/init.php';
+ ?>-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +9,8 @@
   </head>
 
   <body>
+
+  <div class="corps">
     <?php include('static/navbar.php'); ?>
     <h1>Travel in Mind</h1>
     <p id="intro">N'oubliez plus vos trajet avec Travel in Mind! Inscrivez vous et recevez par mail ou par sms les trajets et les horaires qui vous interresse.</p>
@@ -63,6 +65,6 @@
     </div>
       <br/>
 
-
+</div>
     </body>
   </html>

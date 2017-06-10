@@ -1,3 +1,18 @@
+
+
+body{
+  background-image: url("../img/rail.jpg");
+  max-width: 100%;
+  height: auto;
+}
+
+.corps{
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: white;
+  background-repeat: round;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -6,6 +21,8 @@ img {
 .navbar-fixed-bottom, .navbar-fixed-top {
   position:absolute;
   top: inherit;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -13,6 +30,7 @@ img {
 .navbar-default .navbar-nav > .active > a:focus {
     background-color: #f8f8f8;
     background: #f8f8f8;
+    
 }
 
 h1 {
@@ -149,20 +167,48 @@ input.compte{
   display:block;
 }
 
-#select_trainLeft{
-  margin-bottom:100px;
-  margin-top:100px;
-  margin-left:25px;
-  margin-right:50px;
-}
-#tableLeft{
-  
-  	border:3px solid #ccc;
-	border-collapse:collapse;
-	width:41.6%;
-  	margin:auto;
-  	border-right:6px dotted black ; 
+/*---------------DEBUT div Resumé de recherche page recherche.php--------------*/
 
+.RechercheResume{
+  margin-left: 5%;
+  border-bottom: 1px black;
+}
+
+
+.btn-success{
+background-image: linear-gradient(to bottom,#0B6138 0,#0B6138 100%);
+
+}
+
+#h1{
+  color: #0B6138;
+}
+
+
+/*---------------FIN div Resumé de recherche page recherche.php--------------*/
+
+/*---------------DEBUT div RechercheResult page recherche.php--------------*/
+
+table.journey{
+  border:1px solid silver;
+}
+
+ul.Liste_horaires,ul.Liste_trajet{
+  list-style-type: none; 
+}
+
+tr.entete{
+  background-color:#0B6138;
+}
+
+th.ligneEntete{
+  text-align: center;
+}
+/*---------------FIN div RechercheResult page recherche.php--------------*/
+
+
+
+/*
 table {
 	border:3px solid #ccc;
 	border-collapse:collapse;
@@ -179,7 +225,7 @@ tbody {
 	background-color:#FFFFFF;
 	border:1px solid #6495ed;
 
-}
+}*/
 th.itineraire {
 	font-family:monospace;
 	border:1px dotted #6495ed;
