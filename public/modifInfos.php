@@ -6,6 +6,7 @@
 
 </head>
 <body>
+<div class="corps">
   <?php include('static/navbar.php'); ?>
   <div>
   <h1>Modification</h1>
@@ -37,6 +38,7 @@
           <input type="submit" class="btn btn-lg btn-success" id="ValidModif" value="Valider">
         </form>
       </div>
+    </div>
     </div>
 </body>
 </html>

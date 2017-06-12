@@ -6,6 +6,7 @@
   </head>
 
   <body>
+    <div class="corps">
     <?php include('static/navbar.php'); ?>
 
     <h1>Mon Compte</h1>
@@ -16,8 +17,7 @@
         <li class="active"><a href="historique.php">Mon historique d'itinéraire</a></li>
     </ul>
   </div>
-
-
+</div>
 
   </body>
 </html>

@@ -6,6 +6,7 @@
   </head>
 
   <body>
+  <div class="corps">
   <?php include('static/navbar.php'); ?>
 
     <h1>Mon Compte</h1>
@@ -28,6 +29,6 @@
     <br/>
     <input type="button" name="modif" id="modif" class="btn btn-lg btn-warning" value="Modifier mes informations"  onclick="document.location.href='modifInfos.php';">
   </div>
-
+</div>
   </body>
 </html>

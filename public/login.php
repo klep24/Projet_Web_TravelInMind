@@ -6,6 +6,7 @@
 
 </head>
 <body>
+<div class="corps">
   <?php include('static/navbar.php'); ?>
   <div>
   <h1>Connexion</h1>
@@ -22,8 +23,8 @@
         </form>
       </div>
       <p id="mdp"><a href='#'>Mot de passe oublié ?</a></p>
-      <p id="senregistrer">Pas encore de compte ? <a href='enregistrement.php'>S'enregistrer</a><p>
+      <p id="senregistrer">Pas encore de compte ? <a href='enregistrement.php'>S'enregistrer</a></p>
     </div>
-
+</div>
 </body>
 </html>

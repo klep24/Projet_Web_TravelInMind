@@ -39,6 +39,7 @@ img {
 
 h1 {
   	margin-left:5%;
+    margin-bottom:2%;
 }
 
 #intro {
@@ -238,7 +239,10 @@ tbody.section{
    text-align: center;
    
  }
-
+.row{
+  margin-left: 2%;
+  margin-right: 2%;
+}
  thead{
   border: none;
  }
@@ -260,7 +264,7 @@ td{
 }
 
 th.plus{
-  
+
 }
 /*---------------FIN div RechercheResult page recherche.php--------------*/
 
