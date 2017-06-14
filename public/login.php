@@ -13,10 +13,10 @@
     <div class="connexion">
       <form id="myform" >
           <label class="connexion">Adresse Mail</label>
-          <input type="text" name="mail" class="typeahead" >
+          <input type="text" name="mail" class="typeahead2" >
           <br/>
           <label class="connexion">Mot de passe</label>
-          <input type="password" id="password" name="mdp" class="typeahead" >
+          <input type="password" id="password" name="mdp" class="typeahead2" >
           <br/>
           <br/>
           <input type="submit" class="btn btn-lg btn-success" id="Register" value="Connexion">

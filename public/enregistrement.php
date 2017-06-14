@@ -13,26 +13,26 @@
     <div class="enregistrement">
       <form id="myform" >
           <label class="enregistrement" ><span class="obligatoire">* </span>Nom</label>
-          <input type="text" name="nom" class="typeahead">
+          <input type="text" name="nom" class="typeahead2">
           <br/>
           <label class="enregistrement"><span class="obligatoire">* </span>Prénom</label>
-          <input type="text" name="prenom" class="typeahead">
+          <input type="text" name="prenom" class="typeahead2">
           <br/>
           <label class="enregistrement"><span class="obligatoire">* </span>Adresse Mail</label>
-          <input type="text" name="mail" class="typeahead" >
+          <input type="text" name="mail" class="typeahead2" >
           <br/>
           <label class="enregistrement"><span class="obligatoire">* </span>Mot de passe</label>
-          <input type="password" id="password" name="mdp" class="typeahead" >
+          <input type="password" id="password" name="mdp" class="typeahead2" >
           <br/>
           <label class="enregistrement"><span class="obligatoire">* </span>Confirmer mot de passe</label>
-          <input type="password" name="confirmermdp" class="typeahead">
+          <input type="password" name="confirmermdp" class="typeahead2">
           <br/>
           <label class="enregistrement">  Gare favorite</label>
           <div id="scrollable-menu-dep">
-            <input type="text" name="gare" class="typeahead" ></input>
+            <input type="text" name="gare" class="typeahead2" ></input>
           </div>
           <label class="enregistrement">  N° de téléphone</label>
-          <input type="text" name="telephone" class="typeahead">
+          <input type="text" name="telephone" class="typeahead2">
           <br/>
           <br/>
           <input type="submit" class="btn btn-lg btn-success" id="Register" value="S'enregistrer">

@@ -200,11 +200,7 @@ jQuery(document).ready(function(){
   });
 
   $("#reset_train").on("click", function() {
-    $("input.typeahead").val("");
-    gare_dep = null;
-    gare_arr = null;
-    $("select.typeahead").val("");
-    updateValidBtnState();
+      document.location.href=("index.php");
   });
 
 
