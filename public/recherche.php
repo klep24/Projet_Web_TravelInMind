@@ -17,9 +17,9 @@
       <div class="RechercheResume">
         <h1>Votre <span id="h1">Recherche</span></h1>
 
-        <label>Depart: </label><br>
-        <label>Arrivée: </label><br>
-        <label>Date et heure de circulation: </label><br>
+        <label>Depart: <?php echo $_GET['station_start']; ?> </label><br>
+        <label>Arrivée: <?php echo $_GET['station_stop']; ?> </label><br>
+        <label>Date et heure de circulation: <?php echo $_GET['datetime']; ?></label><br>
 
         <button type="button" class="btn btn-success" onclick="document.location.href='index.php';">Modifier la recherche</button>
       </div>
@@ -77,7 +77,27 @@
 
       </div>
 
+
+
+
+
+
+
+
 <!-----------------------FIN-RESULT---------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
   </body>
