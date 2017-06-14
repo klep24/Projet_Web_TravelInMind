@@ -60,11 +60,8 @@ $(window).on('load', function(){
   });
 
 
-  jQuery.validator.setDefaults({
-    debug: true,
-    success: "valid"
-  });
-  $( "#myform" ).validate({
+jQuery(document).ready(function){
+    $( "#myform" ).validate({
     rules: {
       nom: {
         required: true
