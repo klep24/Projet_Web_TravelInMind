@@ -11,14 +11,15 @@
   <body> 
 
     <div class="corps">
+    <div class="chargeSearch">
       <?php include('static/navbar.php'); ?>
 
 <!-----------------------RESUME---------------------->
       <div class="RechercheResume">
         <h1>Votre <span id="h1">Recherche</span></h1>
 
-        <label>Depart: <?php echo $_GET['station_start']; ?> </label><br>
-        <label>Arrivée: <?php echo $_GET['station_stop']; ?> </label><br>
+        <label>Depart: <?php echo $_GET['nom_dep']; ?> </label><br>
+        <label>Arrivée: <?php echo $_GET['nom_arr']; ?> </label><br>
         <label>Date et heure de circulation: <?php echo $_GET['datetime']; ?></label><br>
 
         <button type="button" class="btn btn-success" onclick="document.location.href='index.php';">Modifier la recherche</button>
@@ -99,6 +100,7 @@
 
 
     </div>
+  </div>
 
   </body>
 
