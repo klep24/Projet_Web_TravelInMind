@@ -36,17 +36,7 @@
           <td class="label_table"><label for="heure_dep">Heure de départ :</label></td>
           <td>
             <div id="select_hdep">
-              <form>
-                <select id="heure_dep" class="typeahead" size="1">
-                  <?php
-                    for ($h = 00; $h <= 24; $h++) {
-                      for($m = 00; $m <= 30; $m = $m + 30) {
-                        echo '<option value="'.$h.'h'.$m.'">'.$h.'h'.$m.'</option>';
-                      }
-                    }
-                  ?>
-                </select>
-              </form>
+              <input id="heure_dep" type="time" class="typeahead" value="now"></input>
             </div>
           </td>
         </tr>
