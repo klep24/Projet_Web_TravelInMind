@@ -60,7 +60,7 @@ $(window).on('load', function(){
   });
 
 
-jQuery(document).ready(function){
+jQuery(document).ready(function(){
     $( "#myform" ).validate({
     rules: {
       nom: {
@@ -111,6 +111,7 @@ jQuery(document).ready(function){
      }
    }
   });
+});
 
 
   // Initialize the Bloodhound suggestion engine
