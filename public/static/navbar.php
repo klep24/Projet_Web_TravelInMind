@@ -16,13 +16,14 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="apropos.php">A propos</a></li>
               </ul>
-              <ul class="nav navbar-nav navbar-right">
+              <!-- <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Connexion</a></li>
-              </ul>
+              </ul> -->
 
 
-              <!-- <?php
-              if ($connecter == false) {
+              <?php
+              session_start();
+              if (!isset($_SESSION["session_id"])) {
                 echo '<ul class="nav navbar-nav navbar-right">
                         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Connexion</a></li>
                       </ul>';
@@ -32,7 +33,7 @@
                         <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Déconnexion</a></li>
                       </ul>';
               }
-              ?> -->
+              ?>
 
             </div>
           </div>
