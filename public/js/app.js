@@ -136,7 +136,7 @@ jQuery(document).ready(function(){
     }
   });
 
-  var gare_dep = null, gare_arr = null, heure_dep = null, jour_dep = null;
+  var gare_dep = null, gare_arr = null, heure_dep = null, jour_dep = null, time_start=null;
 
   function updateValidBtnState() {
     if (gare_dep && gare_arr /* && heure_dep && jour_dep */)
@@ -194,10 +194,17 @@ jQuery(document).ready(function(){
       if (day < 10) {
         day = "0"+day;
       }
-      var time_start = year+month+day+"T"+hours+minute+seconde;
+     time_start = year+month+day+"T"+hours+minute+seconde;
     }
+      
       document.location.href=("recherche.php?station_start="+gare_dep.id+"&station_stop="+gare_arr.id+"&datetime="+ time_start+"&nom_dep="+gare_dep.value+"&nom_arr="+gare_arr.value);
   });
+
+  
+
+
+
+
 
   $("#reset_train").on("click", function() {
       document.location.href=("index.php");

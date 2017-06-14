@@ -13,7 +13,7 @@ body{
   margin-left: 15%;
   margin-right: 15%;
   background-color: ghostwhite;
-  opacity:0.9;
+  opacity:0.95;
   background-repeat: round;
 
 }
@@ -522,4 +522,5 @@ p + p {
   margin: auto;
   display:block;
   margin-bottom: 100px;
+  background-color: ghostwhite;
 }
