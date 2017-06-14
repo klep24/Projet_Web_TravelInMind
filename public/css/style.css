@@ -1,7 +1,7 @@
 
 
 body{
-  background-image: url("../img/rail.jpg");
+  background-image: url("../img/train_carouselle.jpg");
   max-width: 100%;
   height: auto;
 
@@ -12,7 +12,8 @@ body{
 .corps{
   margin-left: 15%;
   margin-right: 15%;
-  background-color: white;
+  background-color: ghostwhite;
+  opacity:0.9;
   background-repeat: round;
 
 }
@@ -222,7 +223,7 @@ tr.entete:hover{
 }
 
 tr.colonnes{
-  background-color: white;
+  background-color: ghostwhite;
   border: none;
   font-size: medium;
   text-align: center;

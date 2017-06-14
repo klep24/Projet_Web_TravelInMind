@@ -31,8 +31,7 @@
       
         <div class="a propos">
     
-      Ce site à pour but de permetre d'obtenir des informations en temps réel, ainsi que des itinéraires.
-		afin founir aux utilisateurs, un espace de sauvegarde de leurs trajets et d'être informé des possibles modifications ou retards
+      Ce site à été réalisé dans le cadre d'un projet web par Bastien Binet, Kevin Lepretre, Julie Ptitjean et Charlotte Rambourg.
         </div>
       
     </div>
@@ -43,8 +42,7 @@
       
         <div class="a propos">
     
-      Ce site à pour but de permetre d'obtenir des informations en temps réel, ainsi que des itinéraires.
-		afin founir aux utilisateurs, un espace de sauvegarde de leurs trajets et d'être informé des possibles modifications ou retards
+      ====Mettre ici les trucs qu'on aurait voulu pouvoir faire =============
         </div>
     </div>
   </div>
