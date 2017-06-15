@@ -26,9 +26,9 @@ $(window).on('load', function(){
     limit: 3
   });
 
-
-    $("select.typeahead").val("");
-    $( function() {
+  $("input#gare_dep").val("");
+  $("input#gare_arr").val("");
+  $( function() {
       $( "#jour_dep" ).datepicker({
         altField: "#datepicker",
         closeText: 'Fermer',
@@ -45,11 +45,10 @@ $(window).on('load', function(){
       }).datepicker("setDate", '+0');
     });
 
-
   $(function(){
     $('input[type="time"][value="now"]').each(function(){
-      var d = new Date(),
-      h = d.getHours(),
+      var d = new Date();
+      h = d.getHours();
       m = d.getMinutes();
       if(h < 10) h = '0' + h;
       if(m < 10) m = '0' + m;
@@ -214,14 +213,20 @@ jQuery(document).ready(function(){
       document.location.href=("recherche.php?station_start="+gare_dep.id+"&station_stop="+gare_arr.id+"&datetime="+ time_start+"&nom_dep="+gare_dep.value+"&nom_arr="+gare_arr.value);
   });
 
-
-
-
-
-
-
   $("#reset_train").on("click", function() {
-      document.location.href=("index.php");
+    $("input#gare_dep").val("");
+    $("input#gare_arr").val("");
+    $( "input#jour_dep" ).datepicker("setDate", "+0");
+    var d = new Date();
+    h = d.getHours();
+    m = d.getMinutes();
+    if(h < 10) h = '0' + h;
+    if(m < 10) m = '0' + m;
+    $("input#heure_dep").val(h + ':' + m);
+    gare_dep = null;
+    gare_arr = null;
+    updateValidBtnState();
+    //  document.location.href=("index.php");
   });
 
 

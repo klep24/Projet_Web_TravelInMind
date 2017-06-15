@@ -144,7 +144,7 @@ span.obligatoire {
   margin-left:220px;
 }
 
-div.compte {
+/*div.compte {
   max-width: 500px;
   padding: 19px 29px 29px;
   margin: 20px auto;
@@ -173,7 +173,7 @@ input.compte{
 #modif{
   margin: auto;
   display:block;
-}
+}*/
 
 /*---------------DEBUT div Resumé de recherche page recherche.php--------------*/
 
@@ -184,13 +184,13 @@ input.compte{
 }
 
 
-.btn-success, .btn-warning{
+.btn-success {
   background-color: #0d9353;
   background-image: none;
   border-color: #0d9353;
 }
 
-.btn-success:hover, .btn-warning:hover{
+.btn-success:hover {
   background-color: #0B6138;
   border-color: #0B6138;
 }
@@ -526,9 +526,6 @@ p + p {
   background-color: ghostwhite;
 }
 
-
-
-
 .modal-body .form-horizontal .col-sm-2,
 .modal-body .form-horizontal .col-sm-10 {
     width: 100%
@@ -539,4 +536,77 @@ p + p {
 }
 .modal-body .form-horizontal .col-sm-offset-2 {
     margin-left: 15px;
+}
+
+
+
+
+/*----------------page moncompte.php----------------------*/
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+
+.toppad{
+  margin-top:20px;
+}
+
+.col-lg-offset-3 {
+    margin-left: 5%;
+}
+
+.col-lg-6 {
+    width: 100%;
+}
+
+.panel-info {
+    border-color: darkgrey;
+}
+
+.panel-info>.panel-heading {
+  background-image: none;
+  background-color: darkgrey;
+  color: black;
+  border-color: darkgrey;
+}
+
+.panel-info>.panel-heading:hover{
+  background-color:#0d9353;
+  color: white;
+  border-color: #0d9353;
+
+}
+
+.rowInfos {
+  margin-left: auto;
+}
+
+.col-lg-9 {
+    width: 100%;
 }

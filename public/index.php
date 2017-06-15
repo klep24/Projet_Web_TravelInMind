@@ -12,7 +12,7 @@
 
   <div class="corps">
     <?php include('static/navbar.php'); ?>
-    <h1>Travel in Mind</h1>
+    <h1>Travel <span id='h1'>in Mind</span></h1>
     <p id="intro">N'oubliez plus vos trajet avec Travel in Mind! Inscrivez vous et recevez par mail ou par sms les trajets et les horaires qui vous interresse.</p>
     <div id="select_train">
       <table class="table">
@@ -50,7 +50,7 @@
         </tr>
 
       </table>
-      <input id="reset_train" class="btn btn-lg btn-warning" type="button" name="reset" value="Réinitialiser"></input>
+      <input id="reset_train" class="btn btn-lg btn-success" type="button" name="reset" value="Réinitialiser"></input>
       <input id="valid_train" class="disabled btn btn-lg btn-success" type="button" name="valid" value="Valider" onclick="document.location.href='recherche.php';"></input>
     </div>
       <br/>
