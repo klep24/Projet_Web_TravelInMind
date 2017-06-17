@@ -6,18 +6,15 @@ $(window).on('load', function(){
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-      url: 'https://api.sncf.com/v1/coverage/sncf/pt_objects?type%5B%5D=stop_area&',
+      url: 'api.php?type=station&',
       prepare: function(query, settings){
         settings.url += 'q=' + query;
-        settings.headers = {
-          'Authorization': 'f6ca878c-116d-461d-a5cf-33d41adf5854'
-        };
         return settings;
       },
       filter: function(gares) {
-        return $.map(gares.pt_objects, function(gare) {
+        return $.map(gares, function(gare) {
           return {
-            value: gare.stop_area.name,
+            value: gare.name,
             id: gare.id
           };
         });
@@ -226,103 +223,4 @@ jQuery(document).ready(function(){
     //  document.location.href=("index.php");
   });
 
-
-class SectionLocal {
-  constructor( rawSection ) {
-    var date_start      = strDateTimetoJSObj(rawSection.departure_date_time);
-    var date_stop       = strDateTimetoJSObj(rawSection.arrival_date_time);
-    var duration        = date_stop - date_start;
-    this.num_train      = rawSection.display_informations.headsign;
-    this.type_train     = rawSection.display_informations.commercial_mode;
-    this.time_start     = strftimeFR("%H:%M", date_start );
-    this.time_stop      = strftimeFR("%H:%M", date_stop );
-    this.duration       = millisToStr( duration );
-    this.station_start  = rawSection.from.stop_point.name;
-    this.station_stop   = rawSection.to.stop_point.name;
-    var direction       = rawSection.display_informations.direction.replace(/( \(.*)/, "");
-    if( this.station_stop == direction )
-      this.station_direction    = "Terminus";
-    else
-      this.station_direction    = "Dir. "+direction;
-  }
-}
-
-class JourneyLocal {
-  constructor( rawJourney ) {
-    var date_start      = strDateTimetoJSObj(rawJourney.departure_date_time);
-    var date_stop       = strDateTimetoJSObj(rawJourney.arrival_date_time);
-    var duration        = date_stop - date_start;
-    var nb_sections     = rawJourney.sections.length;
-    this.date_start     = strftimeFR("%a %e %B", date_start );
-    this.time_start     = strftimeFR("%H:%M", date_start );
-    this.time_stop      = strftimeFR("%H:%M", date_stop );
-    this.duration       = millisToStr( duration );
-    if( rawJourney.sections[0] ){
-      if( rawJourney.sections[0].from.stop_area )
-        this.station_start  = rawJourney.sections[0].from.stop_area.name;
-      else if ( rawJourney.sections[0].from.stop_point )
-        this.station_start  = rawJourney.sections[0].from.stop_point.name;
-    }
-    else
-      this.station_start  = "";
-
-    if( rawJourney.sections[nb_sections-1] ){
-      if( rawJourney.sections[nb_sections-1].to.stop_area )
-        this.station_stop  = rawJourney.sections[nb_sections-1].to.stop_area.name;
-      else if ( rawJourney.sections[nb_sections-1].to.stop_point )
-        this.station_stop  = rawJourney.sections[nb_sections-1].to.stop_point.name;
-    }else
-      this.station_stop = "";
-
-    this.sections = [];
-    rawJourney.sections.forEach( function(rawSection){
-      if( rawSection.display_informations ){
-        this.sections.push( new SectionLocal( rawSection ) );
-      }
-    }, this);
-  }
-}
-
-function journeysToContext( journeys ) {
-  var contextToReturn = {};
-  contextToReturn.journeys = [];
-  for (var index in journeys) {
-    if (journeys.hasOwnProperty(index)) {
-      var contextJourney = {};
-      contextJourney.journey_date_start    = journeys[index].date_start;
-      contextJourney.journey_time_start    = journeys[index].time_start;
-      contextJourney.journey_time_stop     = journeys[index].time_stop;
-      contextJourney.journey_duration      = journeys[index].duration;
-      contextJourney.journey_station_start = journeys[index].station_start;
-      contextJourney.journey_station_stop  = journeys[index].station_stop;
-      contextJourney.sections              = [];
-      var i=0;
-      for (var index2 in journeys[index].sections) {
-        if (journeys[index].sections.hasOwnProperty(index2)) {
-          var contextSection = {};
-          contextSection.section_num = ++i;
-          contextSection.section_num_train         = journeys[index].sections[index2].num_train;
-          contextSection.section_type_train        = journeys[index].sections[index2].type_train;
-          contextSection.section_time_start        = journeys[index].sections[index2].time_start;
-          contextSection.section_time_stop         = journeys[index].sections[index2].time_stop;
-          contextSection.section_duration          = journeys[index].sections[index2].duration;
-          contextSection.section_station_start     = journeys[index].sections[index2].station_start;
-          contextSection.section_station_stop      = journeys[index].sections[index2].station_stop;
-          contextSection.section_station_direction = journeys[index].sections[index2].station_direction;
-
-          contextJourney.sections.push( contextSection );
-        }
-      }
-      contextToReturn.journeys.push(contextJourney);
-    }
-  }
-  return contextToReturn;
-}
-/*
-  var source = $("#result_train_template").html();
-  var template = Handlebars.compile(source);
-  var context = {title: "Testo"}
-  var html_compiled = template(context);
-  $("#result_train table").append( html_compiled );
-*/
 });
