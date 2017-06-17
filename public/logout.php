@@ -1,12 +1,7 @@
 <?php
-  include('static/header.php');
-?>
-    <title>Logout</title>
-  </head>
 
-  <body>
-    <?php
-      include('static/navbar.php');
-    ?>
-  </body>
-<html>
+if (isset($_GET['logout'])) {
+	session_destroy();
+	unset($_SESSION['session_id']);
+	header("Location: index.php");
+}

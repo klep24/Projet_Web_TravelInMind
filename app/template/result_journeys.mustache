@@ -1,0 +1,80 @@
+<div class="journeys">
+ {{# journeys}}
+
+  <table class="journey">
+
+     <thead class="recherchethead"> <!-- En-tête du tableau -->
+         
+                 
+
+                     <tr class="entete">
+                         <th class="ligneEntete">Durée: {{duration}}</th>
+                         <th class="ligneEntete"> 1 correspondance</th>
+                         <th class="ligneEntete"></th>
+                         <th class="">
+
+                            
+
+                         </th>
+                     </tr>
+
+         <tr class="colonnes">
+             <th>Horaires</th>
+             <th>Trajet</th>
+             <th>Type</th>
+             <th>Informations</th>
+         </tr>
+
+     </thead>
+
+     <tbody class="sections"> <!-- Corps du tableau -->
+         {{# sections}}
+         <tr class="section">
+          
+             <td class="horaires">
+                
+                  <label>{{time_start}}</label><br>
+                  <label>{{time_stop}}<label>
+                
+             </td>
+
+
+             <td class="trajet">
+                
+                  <label class="D">{{station_start}}</label><br>
+                  <label>{{station_stop}}<label>
+                
+              </td>
+
+             <td class="section_num_type_train"><img src="img/icon.jpg"><br>{{type_train}}<br>n°{{num_train}}</td>
+             <td class="infos">Départ à l'heure</td>
+         </tr>
+
+         <tr class="lignes">
+          
+             <td>
+                <hr>
+             </td>
+
+             <td>
+                <hr>
+             </td>
+
+             <td>
+                <hr>
+             </td>
+
+             <td>
+                <hr>
+             </td>
+
+         </tr>
+
+
+
+
+         {{/sections}}
+     </tbody>
+  </table>
+    {{/journeys}}
+  </div>

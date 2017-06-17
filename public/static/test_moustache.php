@@ -1,42 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
   <head>
-
-    <title>Recherche</title>
-    <?php include('static/header.php'); ?>
-
+    <meta charset="utf-8">
+    <title>Tests Résultats</title>
   </head>
+  <body>
 
-  <body> 
-
-    <div class="corps">
-    <div class="chargeSearch">
-      <?php include('static/navbar.php'); ?>
-
-<!-----------------------RESUME---------------------->
-      <div class="RechercheResume">
-        <h1>Votre <span id="h1">Recherche</span></h1>
-
-        <label>Depart: <?php echo $_GET['nom_dep']; ?> </label><br>
-        <label>Arrivée: <?php echo $_GET['nom_arr']; ?> </label><br>
-        <label>Date et heure de circulation: <?php echo $_GET['datetime']; ?></label><br>
-
-        <button type="button" class="btn btn-success" onclick="document.location.href='index.php';">Modifier la recherche</button>
-      </div>
-<!-----------------------FIN-RESUME---------------------->
-
-<hr>
-
-
-<!-----------------------DEBUT-RESULT---------------------->
-      <div class="RechercheResult">
-
-          <?php
-      require __DIR__."/../app/vendor/autoload.php";
+    <?php
+      require __DIR__."/../../app/vendor/autoload.php";
 
       $m = new Mustache_Engine(array(
-         'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/../app/template'),
+         'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/../../app/template'),
        ));
 
       $arr_context = array('journeys' => array( array('date_start'    => '8 juin',
@@ -70,38 +44,15 @@
                                               )
                           );
 
+      //print_r($arr_context);
+
 
       echo $m->render('result_journeys', $arr_context);
 
      ?>
-     <br><br><br>
 
-      </div>
-
-
-
-
-
-
-
-
-<!-----------------------FIN-RESULT---------------------->
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-  </div>
-
+     
   </body>
+
 
 </html>

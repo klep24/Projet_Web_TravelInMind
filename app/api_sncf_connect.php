@@ -11,6 +11,7 @@ class Api_SNCF
                               'disruptions' => 'coverage/sncf/disruptions/%disruptions_id%/?'
                             );
 
+
   private function __construct( $_url_base, $_key ){
     $this->url_base = $_url_base;
     $this->key = $_key;
@@ -23,6 +24,7 @@ class Api_SNCF
   public function getKey(){
     return $this->key;
   }
+
 
   private function  _query( $url ){
     $cl = curl_init();
