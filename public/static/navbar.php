@@ -22,7 +22,7 @@
 
 
               <?php
-              session_start();
+              
               if (!isset($_SESSION["session_id"])) {
                 echo '<ul class="nav navbar-nav navbar-right">
                         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Connexion</a></li>
