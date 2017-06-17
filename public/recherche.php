@@ -33,6 +33,7 @@
       <div class="RechercheResult">
 
           <?php
+       require __DIR__."/../app/init.php";
        require __DIR__."/../app/vendor/autoload.php";
 
        $m = new Mustache_Engine(array(
@@ -41,10 +42,9 @@
         ));
        $arr_context = array();
 
-       $url_base = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+       $url_base = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://".$_SERVER['HTTP_HOST'].$_GLOBALS['config_app']['general']['url_base'].$_SERVER['REQUEST_URI'];
        $url_base = substr($url_base, 0,  strrpos( $url_base, '/' )+1);
        $url = $url_base . 'api.php?type=journey&station_start='.$_REQUEST['station_start'].'&station_stop='.$_REQUEST['station_stop'].'&time_start='.$_REQUEST['time_start'];
-
        $cl = curl_init();
        $options = array( CURLOPT_URL => $url,
                          CURLOPT_HEADER => FALSE,
@@ -53,6 +53,7 @@
        curl_setopt_array($cl, $options);
        $output = curl_exec($cl);
        curl_close($cl);
+
 
        $arr_context = json_decode($output, true);
 
