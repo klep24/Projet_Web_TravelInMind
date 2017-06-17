@@ -207,7 +207,7 @@ jQuery(document).ready(function(){
      time_start = year+month+day+"T"+hours+minute+seconde;
     }
 
-      document.location.href=("recherche.php?station_start="+gare_dep.id+"&station_stop="+gare_arr.id+"&datetime="+ time_start+"&nom_dep="+gare_dep.value+"&nom_arr="+gare_arr.value);
+      document.location.href=("recherche.php?station_start="+gare_dep.id+"&station_stop="+gare_arr.id+"&time_start="+ time_start+"&nom_dep="+gare_dep.value+"&nom_arr="+gare_arr.value);
   });
 
   $("#reset_train").on("click", function() {
