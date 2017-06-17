@@ -58,7 +58,6 @@ $(window).on('load', function(){
     });
   });
 
-
 jQuery(document).ready(function(){
     $( "#myform" ).validate({
     rules: {
@@ -78,7 +77,6 @@ jQuery(document).ready(function(){
       },
       confirmermdp: {
         required: true,
-        minlength :8,
         equalTo: "#password"
       },
       telephone: {
@@ -100,7 +98,6 @@ jQuery(document).ready(function(){
       },
       confirmermdp: {
          required: "Champ obligatoire",
-         minlength: "Minimum 8 caractères",
          equalTo: "Mot de passe différent"
      },
      telephone: {
