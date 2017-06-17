@@ -20,6 +20,8 @@ function sub_HHMMSS($time_stop, $time_start)
 
       $timestamp_diff = $timestamp_stop - $timestamp_start;
 
+      if( $timestamp_diff < 0 )
+        $timestamp_diff += 24*3600;
 
 
       $HH_diff = (int)($timestamp_diff/3600);
