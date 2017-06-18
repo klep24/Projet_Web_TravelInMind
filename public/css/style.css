@@ -3,12 +3,11 @@
 body{
   background-image: url("../img/train_carouselle.jpg");
   background-attachment: fixed;
-  background-position: center; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   max-width: 100%;
   height: auto;
-
-  background-repeat: round;
-
 }
 
 .corps{
