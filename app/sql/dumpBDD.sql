@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `usertravel`;
 CREATE TABLE `usertravel` (
   `usertravel_id` int(11) NOT NULL,
   `usertravel_user` int(11) NOT NULL,
-  `usertravel_journey_id` varchar(50) NOT NULL,
+  `usertravel_journey_id` varchar(200) NOT NULL,
   `usertravel_journey_data` varchar(9999) NOT NULL,
   `usertravel_followed` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
