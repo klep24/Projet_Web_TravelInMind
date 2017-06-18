@@ -15,28 +15,34 @@
       <?php include('static/navbar.php'); ?>
 
 <!-----------------------RESUME---------------------->
-    <div class="RechercheResume">
-       <h1>Votre <span id="h1">Recherche</span></h1>        <label>Depart: <?php echo $_GET['nom_dep']; ?> </label><br>
-       <label>Arrivée: <?php echo $_GET['nom_arr']; ?> </label><br>
-       <label>Date et heure de circulation:          <?php           $time_start=$_GET['time_start'];
-          $day=substr($time_start,6,2);
-          $month=substr($time_start,4,2);
-          $year=substr($time_start,0,4);
-          $heure=substr($time_start,9,2);
-          $minute=substr($time_start,11,2);
+      <div class="RechercheResume">
+        <h1>Votre <span id="h1">Recherche</span></h1>
 
-          echo("Le ");
-          echo ($day);
-          echo ("-");
-          echo $month;
-          echo ("-");
-          echo ($year);
-          echo (" ");
-          echo ("à ");
-          echo ($heure);
-          echo ("h");
-          echo ($minute);
-         ?></label><br>
+        <label>Depart: <?php echo $_GET['nom_dep']; ?> </label><br>
+        <label>Arrivée: <?php echo $_GET['nom_arr']; ?> </label><br>
+        <label>Date et heure de circulation: <?php echo $_GET['time_start']; ?>
+            <?php 
+
+           $time_start=$_GET['datetime'];
+           $day=substr($time_start,6,2);
+           $month=substr($time_start,4,2);
+           $year=substr($time_start,0,4);
+           $heure=substr($time_start,9,2);
+           $minute=substr($time_start,11,2);
+           
+           echo("Le ");
+           echo ($day);
+           echo ("-");
+           echo $month;
+           echo ("-");
+           echo ($year);
+           echo (" ");
+           echo ("à ");
+           echo ($heure);
+           echo ("h");
+           echo ($minute);        
+          ?>
+        </label><br>
         <button type="button" class="btn btn-success" onclick="document.location.href='index.php';">Modifier la recherche</button>
      </div>
 <!-----------------------FIN-RESUME---------------------->
