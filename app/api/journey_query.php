@@ -99,6 +99,7 @@ if (  $_REQUEST['station_start'] &&
                                     'duration'      => $duration->format('%hh%imn'),
                                     'station_start' => $one_journey['sections']['0']['to']['stop_point']['name'],
                                     'station_stop'  => $one_journey['sections'][$nb_sections-1]['from']['stop_point']['name'],
+                                    'nb_connections'=> -1,
                                     'sections'      => array()
                                   );
         foreach ($one_journey['sections'] as $id_section => $one_section) {
@@ -160,9 +161,11 @@ if (  $_REQUEST['station_start'] &&
                                           'station_stop' => $one_section['to']['stop_point']['name'],
                                           'station_direction' => $flag_terminus?'(terminus)':'(dir. '.trim(explode('(',$one_section['display_informations']['direction'])[0]).')',
                                           'delays' => $flag_delay?($delay_value=='\x404'?"Supprimé":"Retard de ".$delay_value):'A l\'heure',
-                                          'cause_delay' => $flag_delay?$cause_value:''
+                                          'cause_delay' => $flag_delay?$cause_value:'',
+                                          'issue' => $flag_delay
                                         );
               array_push( $processed_journey['sections'], $processed_section );
+              $processed_journey['nb_connections']++;
             }
         }
       }
