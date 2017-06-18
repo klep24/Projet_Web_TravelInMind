@@ -20,10 +20,7 @@
 
         <label>Depart: <?php echo $_GET['nom_dep']; ?> </label><br>
         <label>Arrivée: <?php echo $_GET['nom_arr']; ?> </label><br>
-        <label>Date et heure de circulation: <?php echo $_GET['datetime']; ?>
-          
-
-
+        <label>Date et heure de circulation: <?php echo $_GET['time_start']; ?>
             <?php 
 
            $time_start=$_GET['datetime'];
@@ -45,10 +42,9 @@
            echo ("h");
            echo ($minute);        
           ?>
-   </label><br>
-
+        </label><br>
         <button type="button" class="btn btn-success" onclick="document.location.href='index.php';">Modifier la recherche</button>
-      </div>
+     </div>
 <!-----------------------FIN-RESUME---------------------->
 
 <hr>
