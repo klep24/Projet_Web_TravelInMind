@@ -135,6 +135,7 @@ if (  $_REQUEST['station_start'] &&
 
                   case 'deleted':
                     $delay_value = '\x404';
+                    $cause_value = $RT_station_stop['cause'];
                     break;
 
                   case 'unchanged':
