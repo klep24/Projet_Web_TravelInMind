@@ -20,10 +20,10 @@
 
         <label>Depart: <?php echo $_GET['nom_dep']; ?> </label><br>
         <label>Arrivée: <?php echo $_GET['nom_arr']; ?> </label><br>
-        <label>Date et heure de circulation: <?php echo $_GET['time_start']; ?>
+        <label>Date et heure de circulation: <?php /* echo $_GET['time_start'];*/ ?>
             <?php 
 
-           $time_start=$_GET['datetime'];
+           $time_start=$_GET['time_start'];
            $day=substr($time_start,6,2);
            $month=substr($time_start,4,2);
            $year=substr($time_start,0,4);
@@ -63,9 +63,10 @@
         ));
        $arr_context = array();
 
-       $url_base = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://".$_SERVER['HTTP_HOST'].$_GLOBALS['config_app']['general']['url_base'].$_SERVER['REQUEST_URI'];
+       $url_base = $_GLOBALS['config_app']['general']['url_base'].$_SERVER['REQUEST_URI'];
        $url_base = substr($url_base, 0,  strrpos( $url_base, '/' )+1);
        $url = $url_base . 'api.php?type=journey&station_start='.$_REQUEST['station_start'].'&station_stop='.$_REQUEST['station_stop'].'&time_start='.$_REQUEST['time_start'];
+//       echo $url;
        $cl = curl_init();
        $options = array( CURLOPT_URL => $url,
                          CURLOPT_HEADER => FALSE,
