@@ -20,7 +20,32 @@
 
         <label>Depart: <?php echo $_GET['nom_dep']; ?> </label><br>
         <label>Arrivée: <?php echo $_GET['nom_arr']; ?> </label><br>
-        <label>Date et heure de circulation: <?php echo $_GET['datetime']; ?></label><br>
+        <label>Date et heure de circulation: <?php echo $_GET['datetime']; ?>
+          
+
+
+            <?php 
+
+           $time_start=$_GET['datetime'];
+           $day=substr($time_start,6,2);
+           $month=substr($time_start,4,2);
+           $year=substr($time_start,0,4);
+           $heure=substr($time_start,9,2);
+           $minute=substr($time_start,11,2);
+           
+           echo("Le ");
+           echo ($day);
+           echo ("-");
+           echo $month;
+           echo ("-");
+           echo ($year);
+           echo (" ");
+           echo ("à ");
+           echo ($heure);
+           echo ("h");
+           echo ($minute);        
+          ?>
+   </label><br>
 
         <button type="button" class="btn btn-success" onclick="document.location.href='index.php';">Modifier la recherche</button>
       </div>
