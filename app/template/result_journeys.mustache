@@ -9,7 +9,15 @@
 
                      <tr class="entete">
                          <th class="ligneEntete">Durée: {{duration}}</th>
-                         <th class="ligneEntete"> 1 correspondance</th>
+                         <th class="ligneEntete"> 
+                         
+                         {
+                         "nbS"={{nb_sections}},
+                         "nbC"=nbS-1,
+                         }
+                         {{nbC}} correspondance(s)
+
+                         </th>
                          <th class="ligneEntete"></th>
                          <th class="Selectionner"><button type="button" class="btn btn-success" onclick="">Selectionner ce trajet</button></th>
                      </tr>
