@@ -204,6 +204,17 @@ input.compte{
 /*---------------FIN div Resumé de recherche page recherche.php--------------*/
 
 /*---------------DEBUT div RechercheResult page recherche.php--------------*/
+div.cause {
+  color: gray;
+  font-weight: normal;
+  font-style: italic;
+}
+
+td.issue {
+  color: red;
+  font-weight: bold;
+}
+
 
 table.journey{
 

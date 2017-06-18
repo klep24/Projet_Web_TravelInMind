@@ -9,12 +9,17 @@
 
                      <tr class="entete">
                          <th class="ligneEntete">Durée: {{duration}}</th>
-                         <th class="ligneEntete"> 1 correspondance</th>
-                         <th class="ligneEntete"></th>
-                         <th class="">
+                         <th class="ligneEntete" colspan="2">
+                           {{# nb_connections}}
+                            {{nb_connections}} correspondance(s)
+                           {{/ nb_connections}}
+                           {{^ nb_connections}}
+                            trajet direct
+                           {{/ nb_connections}}
 
-
-
+                         </th>
+                         <th class="ligneEntete">
+                           <button type="button" onclick="document.location.href='index.php';" class="btn btn-default pull-right glyphicon  glyphicon glyphicon-check" style="margin-right: 5%; font-size: medium;"> Suivre</button>
                          </th>
                      </tr>
 
@@ -47,11 +52,18 @@
               </td>
 
              <td class="section_num_type_train"><img src="img/icon.jpg"><br>{{type_train}}<br>n°{{num_train}}</td>
-             <td class="infos">{{delays}}
-               {{# cause_delay}}
-                <br> {{cause_delay}}
-               {{/ cause_delay}}
-             </td>
+             {{# issue}}
+               <td class="infos issue" style="color: red;">{{delays}}
+                 {{# cause_delay}}
+                  <br><div class="cause"> {{cause_delay}}</div>
+                 {{/ cause_delay}}
+               </td>
+             {{/ issue}}
+             {{^ issue}}
+               <td class="infos allrigth">{{delays}}</td>
+             {{/ issue}}
+
+
          </tr>
 
          <tr class="lignes">
