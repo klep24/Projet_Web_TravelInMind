@@ -8,7 +8,7 @@
 
   </head>
 
-  <body>
+  <body> 
 
     <div class="corps">
     <div class="chargeSearch">
@@ -20,31 +20,10 @@
 
         <label>Depart: <?php echo $_GET['nom_dep']; ?> </label><br>
         <label>Arrivée: <?php echo $_GET['nom_arr']; ?> </label><br>
-        <label>Date et heure de circulation: <?php /* echo $_GET['time_start'];*/ ?>
-            <?php 
+        <label>Date et heure de circulation: <?php echo $_GET['datetime']; ?></label><br>
 
-           $time_start=$_GET['time_start'];
-           $day=substr($time_start,6,2);
-           $month=substr($time_start,4,2);
-           $year=substr($time_start,0,4);
-           $heure=substr($time_start,9,2);
-           $minute=substr($time_start,11,2);
-           
-           echo("Le ");
-           echo ($day);
-           echo ("-");
-           echo $month;
-           echo ("-");
-           echo ($year);
-           echo (" ");
-           echo ("à ");
-           echo ($heure);
-           echo ("h");
-           echo ($minute);        
-          ?>
-        </label><br>
         <button type="button" class="btn btn-success" onclick="document.location.href='index.php';">Modifier la recherche</button>
-     </div>
+      </div>
 <!-----------------------FIN-RESUME---------------------->
 
 <hr>
@@ -54,33 +33,46 @@
       <div class="RechercheResult">
 
           <?php
-       require __DIR__."/../app/init.php";
-       require __DIR__."/../app/vendor/autoload.php";
+      require __DIR__."/../app/vendor/autoload.php";
 
-       $m = new Mustache_Engine(array(
-          'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/../app/template'),
-          'logger' => new Mustache_Logger_StreamLogger(dirname(__FILE__).'/../app/template/log/log.txt', Mustache_Logger::DEBUG)
-        ));
-       $arr_context = array();
+      $m = new Mustache_Engine(array(
+         'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/../app/template'),
+       ));
 
-       $url_base = $_GLOBALS['config_app']['general']['url_base'].$_SERVER['REQUEST_URI'];
-       $url_base = substr($url_base, 0,  strrpos( $url_base, '/' )+1);
-       $url = $url_base . 'api.php?type=journey&station_start='.$_REQUEST['station_start'].'&station_stop='.$_REQUEST['station_stop'].'&time_start='.$_REQUEST['time_start'];
-//       echo $url;
-       $cl = curl_init();
-       $options = array( CURLOPT_URL => $url,
-                         CURLOPT_HEADER => FALSE,
-                         CURLOPT_RETURNTRANSFER => TRUE
-                       );
-       curl_setopt_array($cl, $options);
-       $output = curl_exec($cl);
-       curl_close($cl);
+      $arr_context = array('journeys' => array( array('date_start'    => '8 juin',
+                                                      'time_start'    => '13h45',
+                                                      'time_stop'     => '16h45',
+                                                      'duration'      => '3h',
+                                                      'station_start' => 'Paris',
+                                                      'station_stop'  => 'Bourges',
+                                                      'sections'      => array( array(  'num' => 1,
+                                                                                        'num_train' => '04325',
+                                                                                        'type_train' => 'Intercité',
+                                                                                        'time_start' => '13h45',
+                                                                                        'time_stop' => '16h15',
+                                                                                        'duration' => '2h30mn',
+                                                                                        'station_start' => 'Paris',
+                                                                                        'station_stop' => 'Vierzon',
+                                                                                        'station_direction' => 'Toulouse'
+                                                                                     ),
+                                                                                array( 'num' => 2,
+                                                                                       'num_train' => '12325',
+                                                                                       'type_train' => 'TER',
+                                                                                       'time_start' => '16h25',
+                                                                                       'time_stop' => '16h45',
+                                                                                       'duration' => '0h20mn',
+                                                                                       'station_start' => 'Vierzon',
+                                                                                       'station_stop' => 'Bourges',
+                                                                                       'station_direction' => 'Bourges'
+                                                                                    )
+                                                                           )
+                                                    )
+                                              )
+                          );
 
 
-       $arr_context = json_decode($output, true);
+      echo $m->render('result_journeys', $arr_context);
 
-
-       echo $m->render('result_journeys', $arr_context);
      ?>
      <br><br><br>
 

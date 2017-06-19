@@ -16,19 +16,23 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="apropos.php">A propos</a></li>
               </ul>
+              <?php
+              ?>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="moncompte.php"> Mon Compte</a></a></li>
+              </ul>
               <!-- <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Connexion</a></li>
               </ul> -->
 
 
               <?php
-              
-              if (!isset($_SESSION["session_id"])) {
+
+              if (!isset($_COOKIE["user_token"])) {
                 echo '<ul class="nav navbar-nav navbar-right">
                         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Connexion</a></li>
                       </ul>';
-              }
-              else {
+              }else {
                 echo '<ul class="nav navbar-nav navbar-right">
                         <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Déconnexion</a></li>
                       </ul>';

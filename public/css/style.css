@@ -2,12 +2,11 @@
 
 body{
   background-image: url("../img/train_carouselle.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   max-width: 100%;
   height: auto;
+
+  background-repeat: round;
+
 }
 
 .corps{
@@ -204,17 +203,6 @@ input.compte{
 /*---------------FIN div Resumé de recherche page recherche.php--------------*/
 
 /*---------------DEBUT div RechercheResult page recherche.php--------------*/
-div.cause {
-  color: gray;
-  font-weight: normal;
-  font-style: italic;
-}
-
-td.issue {
-  color: red;
-  font-weight: bold;
-}
-
 
 table.journey{
 
@@ -290,8 +278,8 @@ table {
 	width:75%;
 	margin:auto;
   margin-bottom: 100px;
-}
 
+}
 thead{
 	background-color:#D0E3FA;
 
@@ -572,10 +560,6 @@ p + p {
     cursor: pointer;
 }
 
-.table-user-information {
-  border: 0;
-}
-
 .table-user-information > tbody > tr {
     border-top: 1px solid rgb(221, 221, 221);
 }
@@ -594,7 +578,7 @@ p + p {
 }
 
 .col-lg-offset-3 {
-    margin-left: -0.2%;
+    margin-left: 5%;
 }
 
 .col-lg-6 {
