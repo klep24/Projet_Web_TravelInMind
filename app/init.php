@@ -10,9 +10,7 @@
 	}
 
 	$app_config = parse_ini_file($file_config, true);
-	$_GLOBALS['config_app'] = $app_config;
 
 	$db_instance = DB::get($app_config['db_section']);
   $apiSNCF_instance = Api_SNCF::get($app_config['api_sncf']);
-
 ?>

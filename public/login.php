@@ -1,3 +1,26 @@
+<?php
+    session_start();
+    require_once("APIInterface.php");
+    if(isset($_COOKIE["user_token"])){
+        if(isset($_SESSION["user_id"])){
+            if(check_logged($_SESSION["user_id"], $_COOKIE["user_token"])){
+                header("Location:index.php");
+            }else{
+                if(login()){
+                    header("Location:login.php");
+                }
+            }
+        }else{
+            if(login()){
+                header("Location:login.php");
+            }
+        }
+    }else{
+        if(login()){
+            header("Location:login.php");
+        }
+    }
+ ?>
 <!doctype html>
 <html>
 <head>

@@ -1,3 +1,21 @@
+<?php
+require_once("APIInterface.php");
+session_start();
+if(isset($_COOKIE["user_token"])){
+    if(isset($_SESSION["user_id"])){
+        if(check_logged($_SESSION["user_id"], $_COOKIE["user_token"])){
+            $user = json_decode(find_users($_SESSION["user_id"], "%", "%", "%", "%", "%", "%", "%", "%"), true)[0];
+        }else{
+            header("Location:login.php");
+        }
+    }
+    else{
+        header("Location:login.php");
+    }
+}else{
+    header("Location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,33 +39,33 @@
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
         <div class="panel panel-info">
           <div class="panel-heading">
-                <h3 class="panel-title">(nom et prénom)</h3>
+                <h3 class="panel-title"><?php echo ($user["user_firstname"]." ".$user["user_lastname"]) ; ?> </h3>
           </div>
           <div class="panel-body">
             <div class="rowInfos">
               <div class=" col-md-9 col-lg-9 ">
                 <table class="table table-user-information">
                   <tbody>
+                    <tr>
                       <tr>
                         <td>Email</td>
-                        <td>(adresse mail)</td>
+                        <td><?php echo($user["user_mail"])?></td>
                       </tr>
                       <tr>
                         <td>Mot de passe</td>
-                        <td>(mot de passe)</td>
+                        <td>********</td>
                       </tr>
                       <tr>
                         <td>Gare Favorite</td>
-                        <td>(gare favorite)</td>
+                        <td><?php $station = json_decode(find_station($user["user_favstation"], "%"), true)[0]; echo($station["station_name"]); ?></td>
                       </tr>
-                      <tr>
                         <td>N° de téléphone</td>
-                        <td>(N° de téléphone)</td>
-                      </tr>
+                        <td><?php echo($user["user_phone"]);?></td>
+                    </tr>
                   </tbody>
                 </table>
                 <a class="btn btn-btn-lg btn-success" onclick="document.location.href='modifInfos.php';">Modifier mes informations</a>
-                <a href="#myModal" class="btn btn-btn-lg btn-success" data-toggle="modal">Supprimer mon compte</a>
+                <a href="#" class="btn btn-btn-lg btn-success">Supprimer mon compte</a>
               </div>
             </div>
           </div>
@@ -56,54 +74,5 @@
     </div>
     <br/>
   </div>
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-       aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <!-- Modal Header -->
-              <div class="modal-header">
-                  <button type="button" class="close"
-                     data-dismiss="modal">
-                         <span aria-hidden="true">&times;</span>
-                         <span class="sr-only">Close</span>
-                  </button>
-                  <h4 class="modal-title" id="myModalLabel">
-                      Suppression de compte
-                  </h4>
-              </div>
-
-              <!-- Modal Body -->
-              <div class="modal-body">
-
-                  <form class="form-horizontal" role="form" method="POST">
-                    <div class="form-group">
-                      <div class="col-sm-10">
-                      <br/>
-                          <p> Êtes-vous sûr de vouloir supprimer votre compte ?</p>
-                          <p> Cette action irréversible supprimera vos informations et votre historique</p>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
-                      </div>
-                    </div>
-
-              </div>
-              <!-- Modal Footer -->
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-lg btn-default"
-                          data-dismiss="modal">
-                              Fermer
-                  </button>
-                  <input type="submit" class="btn btn-lg btn-success" id="Supprimer" value="Supprimer définitivement">
-              </div>
-              </form>
-          </div>
-      </div>
-  </div>
-
   </body>
 </html>

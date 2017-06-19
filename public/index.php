@@ -50,8 +50,8 @@
         </tr>
 
       </table>
-      <input id="reset_train" class="btn btn-lg btn-success" type="button" name="reset" value="Réinitialiser"></input>
-      <input id="valid_train" class="disabled btn btn-lg btn-success" type="button" name="valid" value="Valider" onclick="document.location.href='recherche.php';"></input>
+      <input id="reset_train" class="btn btn-lg btn-success" type="button" name="reset" value="Réinitialiser" />
+      <input id="valid_train" class="disabled btn btn-lg btn-success" type="button" name="valid" value="Valider" onclick="document.location.href='recherche.php';" />
     </div>
       <br/>
 

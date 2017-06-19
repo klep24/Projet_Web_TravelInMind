@@ -30,9 +30,9 @@
         <img src="img/insa.png">
       
         <div class="a propos">
-      
+    
       Ce site à été réalisé dans le cadre d'un projet web par Bastien Binet, Kevin Lepretre, Julie Ptitjean et Charlotte Rambourg.
-       </div>
+        </div>
       
     </div>
   </div>
@@ -42,10 +42,7 @@
       
         <div class="a propos">
     
-      Nous aurions voulu pouvoir implementer les fonctionnalités suivantes:
-      <ul>
-        <li>Envoi de SMS et d'email aux utilisateurs en temps réel quand une nouvelle donnée est disponible.</li>
-        <li>...</li>
+      ====Mettre ici les trucs qu'on aurait voulu pouvoir faire =============
         </div>
     </div>
   </div>
